@@ -1,7 +1,7 @@
 from django.shortcuts import HttpResponse
-
-import datetime
+from .getData import *
 
 # Create your views here.
-def list_message(request):
-    return HttpResponse(f'{dicts}')
+def list_dialog(request):
+    data = get_dialogs(request.GET['id'])
+    return HttpResponse(f'{data}')
