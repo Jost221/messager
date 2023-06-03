@@ -1,6 +1,14 @@
 import requests
 
 # name = input('input your id')
-name = '1'
-a = requests.get('http://127.0.0.1:8000/create', params=f'id={name}')
+params = {
+    'name' : 2,
+    'dialog' : 'biba',
+    'message' : 'biiiiiiiiiiiiba',
+}
+
+a = requests.post('http://127.0.0.1:8000/message', json=params)
+if a.status_code != 200:
+    with open('./clientConsole/page.html', 'w', encoding='utf-8') as f:
+        f.write(str(a.text))
 print(a.text)
