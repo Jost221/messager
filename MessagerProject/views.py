@@ -5,3 +5,7 @@ from .getData import *
 def list_dialog(request):
     data = get_dialogs(request.GET['id'])
     return HttpResponse(f'{data}')
+
+def create(request):
+    data = create_dialog(request.GET['id'])
+    return HttpResponse(f'{data}')
