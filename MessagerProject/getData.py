@@ -53,3 +53,7 @@ def check_in_cor(user_name, dialog):
     if len(necessary) > 0 and necessary[0] in cor_list:
         return True, necessary[0], user
     return False, None, None
+
+# def log_out_from_chat(user_name, dialog):
+#     user = get_user(user_name)
+#     cor_list = Сorrespondence.objects.raw(f'SELECT * FROM MessagerProject_сorrespondence WHERE users LIKE "%{user.id}% AND name = {dialog}')
